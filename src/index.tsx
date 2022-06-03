@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App";
+import App from "./View/App";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GeistProvider, CssBaseline } from "@geist-ui/core";
