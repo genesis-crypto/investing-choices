@@ -5,11 +5,13 @@ type GetMyPrinciplesOptions = {
     id: number;
 };
 
-interface Principle {
+export interface Principle {
     id: number;
     category: string;
     category_description: string;
-    subcategory: [];
+    subcategory:
+        | { subcategory: string; subcategory_description: string }[]
+        | [];
 }
 
 interface WithDataResponse {
