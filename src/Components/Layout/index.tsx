@@ -1,15 +1,17 @@
 import React from "react";
 import { Page, Tabs } from "@geist-ui/core";
+import { useNavigate } from "react-router-dom";
 
 const Layout = (props: React.PropsWithChildren<{}>) => {
     const { children } = props;
+    const navigate = useNavigate();
 
     return (
         <Page>
             <Page.Header>
-                <Tabs initialValue="1" onChange={(e) => console.log(e)}>
-                    <Tabs.Item label="Meus Principios" value="/home" />
-                    <Tabs.Item label="Livros" value="/about" />
+                <Tabs initialValue="1" onChange={(e) => navigate(e)}>
+                    <Tabs.Item label="Meus Principios" value="/" />
+                    <Tabs.Item label="Livros" value="/books" />
                     <Tabs.Item label="Usuarios" value="/about-us" />
                 </Tabs>
             </Page.Header>

@@ -1,5 +1,6 @@
 import React from "react";
 import App from "./View/App";
+import CreatePrinciple from "./View/CreatePrinciple";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
@@ -19,6 +20,7 @@ root.render(
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<App />} />
+                        <Route path="/create" element={<CreatePrinciple />} />
                     </Routes>
                 </BrowserRouter>
                 <CssBaseline />
