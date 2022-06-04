@@ -36,7 +36,7 @@ interface UsePrincipleOptions {
 }
 
 export const useDeletePrinciple = ({ id }: UsePrincipleOptions) => {
-    return useMutation(async () => await deletePrinciple({ id }), {
+    return useMutation(() => deletePrinciple({ id }), {
         onSuccess: () => {
             queryClient.setQueryData<CacheMyPrinciples | undefined>(
                 "my-principles",

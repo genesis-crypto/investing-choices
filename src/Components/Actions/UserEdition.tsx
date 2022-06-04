@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Grid, Modal } from "@geist-ui/core";
+import { Button, Grid } from "@geist-ui/core";
 import ModalCustom from "../Modal";
 
 interface UserEditionProps {
