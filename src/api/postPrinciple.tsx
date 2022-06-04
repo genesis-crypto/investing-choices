@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useMutation } from "react-query";
-import { queryClient } from "../config/cache";
 import { useNavigate } from "react-router-dom";
 
 type CreatePrinciplesOptions = {

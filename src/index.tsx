@@ -1,6 +1,7 @@
 import React from "react";
 import App from "./View/App";
 import CreatePrinciple from "./View/CreatePrinciple";
+import EditPrinciple from "./View/EditPrinciple";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
@@ -21,6 +22,7 @@ root.render(
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/create" element={<CreatePrinciple />} />
+                        <Route path="/edit/:id" element={<EditPrinciple />} />
                     </Routes>
                 </BrowserRouter>
                 <CssBaseline />

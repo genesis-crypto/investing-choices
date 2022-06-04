@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Grid } from "@geist-ui/core";
 import ModalCustom from "../Modal";
 
@@ -8,6 +9,8 @@ interface UserEditionProps {
 
 const UserEdition = (props: UserEditionProps) => {
     const { id } = props;
+
+    const navigate = useNavigate();
 
     const [state, setState] = useState(false);
 
@@ -26,7 +29,7 @@ const UserEdition = (props: UserEditionProps) => {
                         ghost
                         auto
                         scale={0.7}
-                        onClick={() => console.log(`going to edit > ${id}`)}
+                        onClick={() => navigate(`/edit/${id}`)}
                     >
                         editar
                     </Button>
