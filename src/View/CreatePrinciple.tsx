@@ -12,19 +12,10 @@ import {
 import { usePostPrinciple } from "../api/postPrinciple";
 
 const CreatePrinciple = () => {
-    const {
-        state: stateCategoria,
-        setState: setStateCategoria,
-        reset: resetCategoria,
-        bindings: bindingsCategoria,
-    } = useInput("");
+    const { state: stateCategoria, bindings: bindingsCategoria } = useInput("");
 
-    const {
-        state: stateDescription,
-        setState: setStateDescription,
-        reset: resetDescription,
-        bindings: bindingsDescription,
-    } = useInput("");
+    const { state: stateDescription, bindings: bindingsDescription } =
+        useInput("");
 
     const { mutate } = usePostPrinciple({
         id: 1,
