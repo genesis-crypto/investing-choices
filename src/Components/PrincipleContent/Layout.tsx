@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Text, Spacer, Collapse, Button, Grid } from "@geist-ui/core";
+import { Card, Text, Spacer, Collapse, Grid } from "@geist-ui/core";
 import { Principle } from "../../api/getMyPrinciples";
 import UserEdition from "../Actions/UserEdition";
 
@@ -24,8 +24,9 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
                                     <Text>{item.category_description}</Text>
                                 </div>
                             </Grid>
+
                             <Grid xs={6}>
-                                <UserEdition />
+                                <UserEdition id={item.id} />
                             </Grid>
                         </Grid.Container>
 
