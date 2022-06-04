@@ -1,14 +1,18 @@
 import React, { Dispatch } from "react";
 import { Modal } from "@geist-ui/core";
+import { useDeletePrinciple } from "../../api/deletePrinciple";
 
 interface ModalCustomProps {
+    id: number;
     state: boolean;
     setState: Dispatch<React.SetStateAction<boolean>>;
     closeHandler: () => void;
 }
 
 const ModalCustom = (props: ModalCustomProps) => {
-    const { state, setState, closeHandler } = props;
+    const { id, state, setState, closeHandler } = props;
+
+    const { mutate } = useDeletePrinciple({ id });
 
     return (
         <Modal visible={state} onClose={closeHandler}>
@@ -20,7 +24,14 @@ const ModalCustom = (props: ModalCustomProps) => {
             <Modal.Action passive onClick={() => setState(false)}>
                 Cencelar
             </Modal.Action>
-            <Modal.Action onClick={() => setState(false)}>Deletar</Modal.Action>
+            <Modal.Action
+                onClick={() => {
+                    mutate();
+                    closeHandler();
+                }}
+            >
+                Deletar
+            </Modal.Action>
         </Modal>
     );
 };

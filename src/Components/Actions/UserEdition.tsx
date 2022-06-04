@@ -46,6 +46,7 @@ const UserEdition = (props: UserEditionProps) => {
             </Grid.Container>
 
             <ModalCustom
+                id={id}
                 state={state}
                 setState={setState}
                 closeHandler={closeHandler}

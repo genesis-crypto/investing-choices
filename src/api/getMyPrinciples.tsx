@@ -14,12 +14,12 @@ export interface Principle {
         | [];
 }
 
-interface WithDataResponse {
+export interface WithDataResponse {
     code: number;
     data: Principle[];
 }
 
-type AxiosBodyResponse = WithDataResponse;
+export type AxiosBodyResponse = WithDataResponse;
 
 export const getMyPrinciples = async ({
     id,
@@ -43,5 +43,5 @@ interface UseMyPrinciplesOptions {
 }
 
 export const useMyPrinciples = ({ id }: UseMyPrinciplesOptions) => {
-    return useQuery("my-principles", () => getMyPrinciples({ id }));
+    return useQuery(["my-principles"], () => getMyPrinciples({ id }));
 };
