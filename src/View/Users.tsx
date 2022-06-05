@@ -31,7 +31,13 @@ const Users = () => {
                                     Ver principios
                                 </Button>
                                 <Spacer />
-                                <Button>Recomendar livro</Button>
+                                <Button
+                                    onClick={() =>
+                                        navigate(`/users/books/${user.id}`)
+                                    }
+                                >
+                                    Recomendar livro
+                                </Button>
                             </Grid>
                         </Card>
                     </Grid.Container>

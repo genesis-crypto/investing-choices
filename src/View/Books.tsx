@@ -37,7 +37,9 @@ const Books = () => {
                                 {book.nome}
                             </Text>
                             <Text>{book.description}</Text>
-
+                            <Text
+                                h4
+                            >{`Numero de recomendacoes: ${book.numberOfSuggestions}`}</Text>
                             <Spacer />
 
                             <Button

@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Text, Grid } from "@geist-ui/core";
+import { Text, Grid } from "@geist-ui/core";
 import { useMyPrinciples } from "../api/getMyPrinciples";
 import Layout from "../Components/Layout";
 import PrincipleContent from "../Components/PrincipleContent";

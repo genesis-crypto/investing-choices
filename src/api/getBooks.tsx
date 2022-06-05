@@ -6,6 +6,7 @@ export interface Book {
     nome: string;
     description: string;
     image_url: string;
+    numberOfSuggestions: string;
 }
 
 export interface WithDataResponse {

@@ -9,6 +9,7 @@ import Books from "./View/Books";
 import Users from "./View/Users";
 import UsersPrinciple from "./View/UserPrinciple";
 import CreateBooks from "./View/CreateBook";
+import SuggestBooks from "./View/SuggestBook";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
@@ -45,6 +46,10 @@ root.render(
                         <Route
                             path="/users/principles/:id"
                             element={<UsersPrinciple />}
+                        />
+                        <Route
+                            path="/users/books/:id"
+                            element={<SuggestBooks />}
                         />
                     </Routes>
                 </BrowserRouter>
