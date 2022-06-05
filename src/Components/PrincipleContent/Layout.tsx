@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Text, Spacer, Collapse, Grid } from "@geist-ui/core";
+import { useNavigate } from "react-router-dom";
+import { Card, Text, Spacer, Collapse, Grid, Button } from "@geist-ui/core";
 import { Principle } from "../../api/getMyPrinciples";
 import UserEdition from "../Actions/UserEdition";
 
@@ -9,6 +10,8 @@ interface PrincipleContentLayoutProps {
 
 const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
     const { data } = props;
+
+    const navigate = useNavigate();
 
     return (
         <div>
@@ -36,9 +39,26 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
                                     <Text>
                                         {subcategory.subcategory_description}
                                     </Text>
+                                    <Button
+                                        type="success"
+                                        ghost
+                                        auto
+                                        scale={0.5}
+                                    >
+                                        Editar
+                                    </Button>
                                 </Collapse>
                             </Collapse.Group>
                         ))}
+                        <Spacer />
+
+                        <Button
+                            onClick={() =>
+                                navigate(`/create/subprinciple/${item.id}`)
+                            }
+                        >
+                            Adicionar Sub-Principio
+                        </Button>
                     </Card>
 
                     <Spacer h={2} />
