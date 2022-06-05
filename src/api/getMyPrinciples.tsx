@@ -2,7 +2,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 type GetMyPrinciplesOptions = {
-    id: number;
+    id: number | string;
 };
 
 export interface Principle {
@@ -39,7 +39,7 @@ export const getMyPrinciples = async ({
 };
 
 interface UseMyPrinciplesOptions {
-    id: number;
+    id: number | string;
 }
 
 export const useMyPrinciples = ({ id }: UseMyPrinciplesOptions) => {

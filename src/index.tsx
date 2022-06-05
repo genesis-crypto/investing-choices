@@ -7,6 +7,7 @@ import EditSubPrinciple from "./View/EditSubPrinciple";
 import EditBook from "./View/EditBook";
 import Books from "./View/Books";
 import Users from "./View/Users";
+import UsersPrinciple from "./View/UserPrinciple";
 import CreateBooks from "./View/CreateBook";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
@@ -41,6 +42,10 @@ root.render(
                         <Route path="/books" element={<Books />} />
                         <Route path="/edit/books/:id" element={<EditBook />} />
                         <Route path="/users" element={<Users />} />
+                        <Route
+                            path="/users/principles/:id"
+                            element={<UsersPrinciple />}
+                        />
                     </Routes>
                 </BrowserRouter>
                 <CssBaseline />
