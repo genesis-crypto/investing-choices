@@ -44,8 +44,17 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
                                         ghost
                                         auto
                                         scale={0.5}
+                                        onClick={() =>
+                                            navigate(
+                                                `/edit/subprinciple/${item.id}/${subcategory.id}`
+                                            )
+                                        }
                                     >
                                         Editar
+                                    </Button>
+                                    <Spacer />
+                                    <Button type="error" ghost auto scale={0.5}>
+                                        Deletar
                                     </Button>
                                 </Collapse>
                             </Collapse.Group>

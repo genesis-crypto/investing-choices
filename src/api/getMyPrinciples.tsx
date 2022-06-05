@@ -10,7 +10,7 @@ export interface Principle {
     category: string;
     category_description: string;
     subcategory:
-        | { subcategory: string; subcategory_description: string }[]
+        | { id: number; subcategory: string; subcategory_description: string }[]
         | [];
 }
 

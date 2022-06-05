@@ -3,6 +3,7 @@ import App from "./View/App";
 import CreatePrinciple from "./View/CreatePrinciple";
 import CreateSubPrinciple from "./View/CreateSubPrinciple";
 import EditPrinciple from "./View/EditPrinciple";
+import EditSubPrinciple from "./View/EditSubPrinciple";
 import Books from "./View/Books";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
@@ -29,6 +30,10 @@ root.render(
                             element={<CreateSubPrinciple />}
                         />
                         <Route path="/edit/:id" element={<EditPrinciple />} />
+                        <Route
+                            path="/edit/subprinciple/:idCategory/:idPrinciple"
+                            element={<EditSubPrinciple />}
+                        />
                         <Route path="/books" element={<Books />} />
                     </Routes>
                 </BrowserRouter>
