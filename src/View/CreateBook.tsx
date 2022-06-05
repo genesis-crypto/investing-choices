@@ -33,7 +33,7 @@ const CreateBook = () => {
             <Text h2>Image URL</Text>
             <Input placeholder="URL da imagem" {...bindingsImage} />
 
-            <Spacer h={4} />
+            <Spacer h={2} />
 
             <Grid>
                 <Button shadow type="secondary" onClick={() => mutate()}>

@@ -33,6 +33,14 @@ const Books = () => {
                                 {book.nome}
                             </Text>
                             <Text>{book.description}</Text>
+                            <Spacer />
+                            <Button
+                                onClick={() =>
+                                    navigate(`/edit/books/${book.id}`)
+                                }
+                            >
+                                Editar
+                            </Button>
                         </Grid>
                     </Card>
                     <Spacer />

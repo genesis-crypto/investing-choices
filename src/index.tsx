@@ -4,6 +4,7 @@ import CreatePrinciple from "./View/CreatePrinciple";
 import CreateSubPrinciple from "./View/CreateSubPrinciple";
 import EditPrinciple from "./View/EditPrinciple";
 import EditSubPrinciple from "./View/EditSubPrinciple";
+import EditBook from "./View/EditBook";
 import Books from "./View/Books";
 import CreateBooks from "./View/CreateBook";
 import ReactQueryProvider from "./config/cache";
@@ -37,6 +38,7 @@ root.render(
                         />
                         <Route path="/create/books" element={<CreateBooks />} />
                         <Route path="/books" element={<Books />} />
+                        <Route path="/edit/books/:id" element={<EditBook />} />
                     </Routes>
                 </BrowserRouter>
                 <CssBaseline />
