@@ -5,6 +5,7 @@ import CreateSubPrinciple from "./View/CreateSubPrinciple";
 import EditPrinciple from "./View/EditPrinciple";
 import EditSubPrinciple from "./View/EditSubPrinciple";
 import Books from "./View/Books";
+import CreateBooks from "./View/CreateBook";
 import ReactQueryProvider from "./config/cache";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
@@ -34,6 +35,7 @@ root.render(
                             path="/edit/subprinciple/:idCategory/:idPrinciple"
                             element={<EditSubPrinciple />}
                         />
+                        <Route path="/create/books" element={<CreateBooks />} />
                         <Route path="/books" element={<Books />} />
                     </Routes>
                 </BrowserRouter>
