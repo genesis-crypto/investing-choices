@@ -21,8 +21,7 @@ const EditSubPrinciple = () => {
     };
 
     const data = queryClient.getQueryData<CacheMyPrinciples>("my-principles");
-    console.log(`>>`, data);
-    console.log(`idCategory, idPrinciple`, idCategory, idPrinciple);
+
     const {
         state: stateSubCategoria,
         setState: setStateSubCategoria,
