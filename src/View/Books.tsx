@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../Components/Layout";
 import { useBooks } from "../api/getBooks";
 import { Card, Text, Spacer, Image, Button, Grid } from "@geist-ui/core";
 import { useNavigate } from "react-router-dom";
+import ModalBook from "../Components/Modal/Book";
 
 const Books = () => {
     const { data } = useBooks();
 
     const navigate = useNavigate();
+
+    const [id, setId] = useState(0);
+    const [state, setState] = useState(false);
 
     return (
         <Layout>
@@ -33,7 +37,9 @@ const Books = () => {
                                 {book.nome}
                             </Text>
                             <Text>{book.description}</Text>
+
                             <Spacer />
+
                             <Button
                                 onClick={() =>
                                     navigate(`/edit/books/${book.id}`)
@@ -41,11 +47,30 @@ const Books = () => {
                             >
                                 Editar
                             </Button>
+
+                            <Spacer />
+
+                            <Button
+                                type="error"
+                                onClick={() => {
+                                    setId(book.id);
+                                    setState(true);
+                                }}
+                            >
+                                Deletar
+                            </Button>
                         </Grid>
                     </Card>
                     <Spacer />
                 </>
             ))}
+
+            <ModalBook
+                id={id}
+                state={state}
+                setState={setState}
+                closeHandler={() => setState(false)}
+            />
         </Layout>
     );
 };
