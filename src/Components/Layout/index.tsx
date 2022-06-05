@@ -12,7 +12,7 @@ const Layout = (props: React.PropsWithChildren<{}>) => {
                 <Tabs initialValue="1" onChange={(e) => navigate(e)}>
                     <Tabs.Item label="Meus Principios" value="/" />
                     <Tabs.Item label="Livros" value="/books" />
-                    <Tabs.Item label="Usuarios" value="/about-us" />
+                    <Tabs.Item label="Usuarios" value="/users" />
                 </Tabs>
             </Page.Header>
 
