@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Text, Spacer, Collapse, Grid, Button } from "@geist-ui/core";
 import { Principle } from "../../api/getMyPrinciples";
 import UserEdition from "../Actions/UserEdition";
+import ModalCustom from "../Modal/Subcategory";
 
 interface PrincipleContentLayoutProps {
     data: Principle[];
@@ -12,6 +13,9 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
     const { data } = props;
 
     const navigate = useNavigate();
+
+    const [id, setId] = useState(0);
+    const [state, setState] = useState(false);
 
     return (
         <div>
@@ -53,7 +57,16 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
                                         Editar
                                     </Button>
                                     <Spacer />
-                                    <Button type="error" ghost auto scale={0.5}>
+                                    <Button
+                                        type="error"
+                                        ghost
+                                        auto
+                                        scale={0.5}
+                                        onClick={() => {
+                                            setId(subcategory.id);
+                                            setState(true);
+                                        }}
+                                    >
                                         Deletar
                                     </Button>
                                 </Collapse>
@@ -68,6 +81,13 @@ const PrincipleContentLayout = (props: PrincipleContentLayoutProps) => {
                         >
                             Adicionar Sub-Principio
                         </Button>
+
+                        <ModalCustom
+                            id={id}
+                            state={state}
+                            setState={setState}
+                            closeHandler={() => setState(false)}
+                        />
                     </Card>
 
                     <Spacer h={2} />
